@@ -19,7 +19,7 @@ namespace Logic
         }
         public void CreateHeroMessage()
         {
-            _print.Message("");
+            _print.Message("Write your name");
         }
     }
 }

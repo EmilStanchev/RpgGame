@@ -2,7 +2,7 @@
 using Interfaces.MonsterInterfaces;
 using Interfaces.StorageInterfaces;
 
-namespace Logic
+namespace Logic.Services
 {
     public class MonsterLogic
     {

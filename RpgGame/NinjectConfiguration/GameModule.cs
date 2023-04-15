@@ -1,9 +1,12 @@
 ﻿using Interfaces.Factories;
 using Interfaces.HeroInterfaces;
+using Interfaces.InputInterfaces;
 using Interfaces.MonsterInterfaces;
 using Interfaces.PrintningInterfaces;
 using Interfaces.ReadingInterfaces;
 using Interfaces.StorageInterfaces;
+using Logic;
+using Logic.Services;
 using Models.HelpingClasses;
 using Models.HeroModels;
 using Models.MonsterModels;
@@ -26,6 +29,8 @@ namespace RpgGame.NinjectConfiguration
             Bind<IGameStorage>().To<GameStorage>();
             Bind<IHeroFactory>().ToFactory();
             Bind<IMonsterFactory>().ToFactory();
+            Bind<IGameMenu>().To<GameMenu>();
+            Bind<IInputLogic>().To<InputLogic>();
 
         }
     }

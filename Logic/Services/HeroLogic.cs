@@ -2,7 +2,7 @@
 using Interfaces.HeroInterfaces;
 using Interfaces.StorageInterfaces;
 
-namespace Logic
+namespace Logic.Services
 {
     public class HeroLogic : IHeroLogic
     {

@@ -13,5 +13,14 @@ namespace Models.HelpingClasses
             }
             return input;
         }
+        public int ConsoleReadNumber(int max)
+        {
+            var input = int.Parse(Console.ReadLine());
+            while (input >= max)
+            {
+                input = int.Parse(Console.ReadLine());
+            }
+            return input;
+        }
     }
 }
