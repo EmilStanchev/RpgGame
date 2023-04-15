@@ -13,17 +13,9 @@ namespace Logic.Services
             _heroFactory = heroFactory;
             _gameStorage = gameStorage;
         }
-        public IMage CreateMage(string name)
+        public IBaseHero CreateHero(string name)
         {
-            return _heroFactory.CreateMage(name);
-        }
-        public IWarrior CreateWarrior(string name)
-        {
-            return _heroFactory.CreateWarrior(name);
-        }
-        public IArcher CreateArcher(string name)
-        {
-            return _heroFactory.CreateArcher(name);
+            return _heroFactory.CreateHero(name);
         }
         public void AddHero(IBaseHero hero)
         {

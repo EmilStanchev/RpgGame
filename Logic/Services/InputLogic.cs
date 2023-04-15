@@ -25,5 +25,11 @@ namespace Logic.Services
             var input = _reader.ConsoleReadLine();
             return input;
         }
+        public int SecondChoose()
+        {
+            _menu.SecondMessage();
+            var input = _reader.ConsoleReadNumber(4);
+            return input;
+        }
     }
 }
