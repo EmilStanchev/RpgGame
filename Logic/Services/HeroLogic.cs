@@ -19,7 +19,7 @@ namespace Logic.Services
         }
         public void AddHero(IBaseHero hero)
         {
-            _gameStorage.Heroes.Add(hero);
+            _gameStorage.AddHero(hero);
         }
     }
 }

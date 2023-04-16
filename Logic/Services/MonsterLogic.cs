@@ -4,7 +4,7 @@ using Interfaces.StorageInterfaces;
 
 namespace Logic.Services
 {
-    public class MonsterLogic
+    public class MonsterLogic : IMonsterLogic
     {
         private readonly IMonsterFactory _factory;
         private readonly IGameStorage _storage;
@@ -19,7 +19,7 @@ namespace Logic.Services
             var boar = _factory.CreateMonster("Boar", 7, 5, 9, 4);
             var wolf = _factory.CreateMonster("Wolf", 11, 8, 14, 7);
             var bear = _factory.CreateMonster("Bear", 22, 17, 21, 11);
-            List<IBaseMonster> monsters = new List<IBaseMonster>() { rat, boar, wolf, bear };
+            var monsters = new List<IBaseMonster>() { rat, boar, wolf, bear };
             _storage.Monsters.AddRange(monsters);
         }
         public void GetAllMonsters()
@@ -28,6 +28,10 @@ namespace Logic.Services
             {
                 Console.WriteLine(item.Name);
             }
+        }
+        public void GetListsCount()
+        {
+            _storage.GetCountOfLists();
         }
     }
 }

@@ -7,6 +7,7 @@ namespace Interfaces.StorageInterfaces
     {
         public List<IBaseHero> Heroes { get; set; }
         public List<IBaseMonster> Monsters { get; set; }
-
+        public void AddHero(IBaseHero hero);
+        public void GetCountOfLists();
     }
 }

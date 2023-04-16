@@ -1,6 +1,6 @@
 ﻿using Interfaces.HeroInterfaces;
 using Interfaces.InputInterfaces;
-using Models.MonsterModels;
+using Interfaces.MonsterInterfaces;
 
 namespace Logic.Services
 {
@@ -17,6 +17,7 @@ namespace Logic.Services
         }
         public void UserFirstChoise()
         {
+            CreateMonsters();
             var input = _inputLogic.FirstChoose();
             while (input != 1)
             {
@@ -24,16 +25,23 @@ namespace Logic.Services
             }
             var name = _inputLogic.NameChoose();
             var hero = CreateHero(name);
+            _monsterLogic.GetAllMonsters();
+            _monsterLogic.GetListsCount();
         }
         public void UserSecondChoice()
         {
-
+            var option = _inputLogic.SecondChoose();
         }
         private IBaseHero CreateHero(string name)
         {
             var hero = _heroLogic.CreateHero(name);
+            Console.WriteLine($"The name is: {name}");
             _heroLogic.AddHero(hero);
             return hero;
+        }
+        private void CreateMonsters()
+        {
+            _monsterLogic.CreatingMonsters();
         }
     }
 }

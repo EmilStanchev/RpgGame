@@ -4,7 +4,7 @@
     {
         public int FirstChoose();
         public string NameChoose();
-
+        public int SecondChoose();
 
     }
 }
