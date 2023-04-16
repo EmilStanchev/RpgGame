@@ -9,11 +9,13 @@ namespace Logic.Services
         private readonly IHeroLogic _heroLogic;
         private readonly IMonsterLogic _monsterLogic;
         private readonly IInputLogic _inputLogic;
-        public GameService(IHeroLogic heroLogic, IMonsterLogic monsterLogic, IInputLogic inputLogic)
+        private readonly IProcessingInput _processingInput;
+        public GameService(IHeroLogic heroLogic, IMonsterLogic monsterLogic, IInputLogic inputLogic, IProcessingInput processingInput)
         {
             _heroLogic = heroLogic;
             _monsterLogic = monsterLogic;
             _inputLogic = inputLogic;
+            _processingInput = processingInput;
         }
         public void UserFirstChoise()
         {
@@ -21,6 +23,7 @@ namespace Logic.Services
             var input = _inputLogic.FirstChoose();
             while (input != 1)
             {
+                _processingInput.FirstChoice(input);
                 input = _inputLogic.FirstChoose();
             }
             var name = _inputLogic.NameChoose();

@@ -8,6 +8,7 @@ namespace Interfaces.PrintningInterfaces
         public void CreateHeroMessage();
         public void MonsterList(List<IBaseMonster> monsters);
         public void SecondMessage();
+        public void Tutorial();
 
     }
 }

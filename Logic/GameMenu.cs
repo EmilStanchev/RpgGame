@@ -38,6 +38,14 @@ namespace Logic
             _print.Message("3. Shop");
             _print.Message("4. Exit");
         }
+        public void Tutorial()
+        {
+            _print.Message("The King`s Bounty is RPG console game. First you should join in our community. To do this you should " +
+            " choose option '1' from the previous menu. You should pick your hero name.  After you choose the class" +
+            " You can attack monsters by choosing option. If you beat them u will recieve experience points and gold. With each level" +
+            " your hero HP and Strenght will increase. If you beat all the monster u win. Have fun and don`t leave without get the" +
+            " head of the last monster. Good luck and watch out.");
+        }
         private void ChooseOptionMessage()
         {
             _print.Message("Choose option to continue");

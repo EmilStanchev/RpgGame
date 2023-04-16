@@ -23,6 +23,7 @@ namespace RpgGame.NinjectConfiguration
             Bind<IPrint>().To<Print>().InSingletonScope();
             Bind<IReader>().To<Reader>().InSingletonScope();
             Bind<IGameStorage>().To<GameStorage>().InSingletonScope();
+            Bind<IProcessingInput>().To<ProcessingInput>().InSingletonScope();
             Bind<IBaseHero>().To<BaseHero>();
             Bind<IBaseMonster>().To<BaseMonster>();
             Bind<IHeroFactory>().ToFactory();
