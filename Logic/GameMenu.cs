@@ -31,7 +31,8 @@ namespace Logic
         }
         public void SecondMessage()
         {
-            _print.Message("Start fight and get gold and experience from monsters.Good luck!");
+            _print.Message("There is no way back. Start fight and get gold and experience points from monsters." +
+                "Good luck! And be careful!");
             ChooseOptionMessage();
             _print.Message("1. Fight");
             _print.Message("2. Hero info");

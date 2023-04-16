@@ -28,11 +28,11 @@ namespace Logic.Services
             }
             var name = _inputLogic.NameChoose();
             var hero = CreateHero(name);
-            _monsterLogic.GetAllMonsters();
             return hero;
         }
         public void UserSecondChoice()
         {
+            Console.Clear();
             int option = _inputLogic.SecondChoose();
             while (option != 1)
             {
@@ -44,7 +44,6 @@ namespace Logic.Services
         private IBaseHero CreateHero(string name)
         {
             var hero = _heroLogic.CreateHero(name);
-            Console.WriteLine($"The name is: {name}");
             _heroLogic.AddHero(hero);
             return hero;
         }
