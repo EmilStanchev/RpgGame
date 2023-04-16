@@ -16,7 +16,7 @@ namespace Models.HelpingClasses
         public int ConsoleReadNumber(int max)
         {
             var input = int.Parse(Console.ReadLine());
-            while (input >= max)
+            while (input > max)
             {
                 input = int.Parse(Console.ReadLine());
             }

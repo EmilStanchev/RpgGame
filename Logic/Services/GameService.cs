@@ -17,7 +17,7 @@ namespace Logic.Services
             _inputLogic = inputLogic;
             _processingInput = processingInput;
         }
-        public void UserFirstChoise()
+        public IBaseHero UserFirstChoise()
         {
             CreateMonsters();
             var input = _inputLogic.FirstChoose();
@@ -29,11 +29,17 @@ namespace Logic.Services
             var name = _inputLogic.NameChoose();
             var hero = CreateHero(name);
             _monsterLogic.GetAllMonsters();
-            _monsterLogic.GetListsCount();
+            return hero;
         }
         public void UserSecondChoice()
         {
-            var option = _inputLogic.SecondChoose();
+            int option = _inputLogic.SecondChoose();
+            while (option != 1)
+            {
+                _processingInput.SecondChoice(option);
+                option = _inputLogic.SecondChoose();
+            }
+            _processingInput.SecondChoice(option);
         }
         private IBaseHero CreateHero(string name)
         {
