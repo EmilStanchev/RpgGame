@@ -1,4 +1,5 @@
-﻿using Interfaces.MonsterInterfaces;
+﻿using Interfaces.HeroInterfaces;
+using Interfaces.MonsterInterfaces;
 using Interfaces.ShopInterfaces;
 
 namespace Interfaces.PrintningInterfaces
@@ -11,6 +12,7 @@ namespace Interfaces.PrintningInterfaces
         public void AllSwords(List<ISword> swords);
         public void SecondMessage();
         public void Tutorial();
+        public void HeroInfo(IBaseHero hero);
 
     }
 }

@@ -38,13 +38,12 @@ namespace Logic.Services
         public void UserSecondChoice()
         {
             Console.Clear();
+            var hero = UserFirstChoise();
             int option = _inputLogic.SecondChoose();
-            while (option != 4)
-            {
-                _processingInput.SecondChoice(option);
-                option = _inputLogic.SecondChoose();
-            }
-            _processingInput.SecondChoice(option);
+            _processingInput.SecondChoice(option, hero);
+        }
+        public void UserThirdChoice()
+        {
         }
         private IBaseHero CreateHero(string name)
         {

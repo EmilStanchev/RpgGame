@@ -31,5 +31,10 @@ namespace Logic.Services
             var input = _reader.ConsoleReadNumber(4);
             return input;
         }
+        public int ThirdChoose()
+        {
+            var input = _reader.ConsoleReadNumber(4);
+            return input;
+        }
     }
 }

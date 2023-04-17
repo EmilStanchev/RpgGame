@@ -1,8 +1,10 @@
-﻿namespace Interfaces.InputInterfaces
+﻿using Interfaces.HeroInterfaces;
+
+namespace Interfaces.InputInterfaces
 {
     public interface IProcessingInput
     {
         public void FirstChoice(int option);
-        public void SecondChoice(int option);
+        public void SecondChoice(int option, IBaseHero hero);
     }
 }

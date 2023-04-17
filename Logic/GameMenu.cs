@@ -1,4 +1,5 @@
-﻿using Interfaces.MonsterInterfaces;
+﻿using Interfaces.HeroInterfaces;
+using Interfaces.MonsterInterfaces;
 using Interfaces.PrintningInterfaces;
 using Interfaces.ShopInterfaces;
 
@@ -52,8 +53,14 @@ namespace Logic
         {
             for (int i = 0; i < swords.Count(); i++)
             {
-                _print.Message($"{i + 1}. {swords[i].Name}");
+                _print.Message($"{i + 1}. {swords[i].Name}: {swords[i].Price}gold, {swords[i].Strength} strength");
             }
+        }
+        public void HeroInfo(IBaseHero hero)
+        {
+            _print.Message($"{hero.Name} has {hero.HP} hp points, {hero.Gold} gold,{hero.Experience} experience " +
+            $"points, {hero.Strength} strength and he is {hero.Level} level." +
+            $" And he needs {hero.ExperienceRequired - hero.Experience} more experience points to level up");
         }
         private void ChooseOptionMessage()
         {
