@@ -33,5 +33,9 @@ namespace Logic.Services
         {
             _storage.GetCountOfLists();
         }
+        public IBaseMonster GetMonsterByName(IBaseMonster monster)
+        {
+            return _storage.Monsters.SingleOrDefault(m => m.Name == monster.Name);
+        }
     }
 }

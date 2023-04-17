@@ -1,5 +1,6 @@
 ﻿using Interfaces.HeroInterfaces;
 using Interfaces.InputInterfaces;
+using Interfaces.MonsterInterfaces;
 using Interfaces.PrintningInterfaces;
 using Interfaces.StorageInterfaces;
 
@@ -50,7 +51,27 @@ namespace Logic.Services
         }
         public void ThirdChoice(int option)
         {
-
+            switch (option)
+            {
+                case 1:
+                    MonsterChoice(option);
+                    break;
+            }
+        }
+        public IBaseMonster MonsterChoice(int option)
+        {
+            switch (option)
+            {
+                case 1:
+                    return _storage.Monsters.SingleOrDefault(m => m.Name == "Rat");
+                case 2:
+                    return _storage.Monsters.SingleOrDefault(m => m.Name == "Boar");
+                case 3:
+                    return _storage.Monsters.SingleOrDefault(m => m.Name == "Wolf");
+                case 4:
+                    return _storage.Monsters.SingleOrDefault(m => m.Name == "Bear");
+            }
+            return null;
         }
         private void ExitOption()
         {

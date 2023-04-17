@@ -1,4 +1,5 @@
 ﻿using Interfaces.HeroInterfaces;
+using Interfaces.MonsterInterfaces;
 
 namespace Interfaces.InputInterfaces
 {
@@ -6,5 +7,6 @@ namespace Interfaces.InputInterfaces
     {
         public void FirstChoice(int option);
         public void SecondChoice(int option, IBaseHero hero);
+        public IBaseMonster MonsterChoice(int option);
     }
 }

@@ -35,15 +35,26 @@ namespace Logic.Services
             var hero = CreateHero(name);
             return hero;
         }
-        public void UserSecondChoice()
+        public void Start()
+        {
+            var hero = UserFirstChoise();
+            while (true)
+            {
+                UserSecondChoice(hero);
+                UserThirdChoice(hero);
+            }
+        }
+        public void UserSecondChoice(IBaseHero hero)
         {
             Console.Clear();
-            var hero = UserFirstChoise();
             int option = _inputLogic.SecondChoose();
             _processingInput.SecondChoice(option, hero);
         }
-        public void UserThirdChoice()
+        public void UserThirdChoice(IBaseHero hero)
         {
+            int option = _inputLogic.ThirdChoose();
+            var monster = _processingInput.MonsterChoice(option);
+            _heroLogic.Fight(hero, monster);
         }
         private IBaseHero CreateHero(string name)
         {

@@ -4,5 +4,5 @@ using RpgGame.NinjectConfiguration;
 
 var kernel = new StandardKernel(new GameModule());
 var gameService = kernel.Get<GameService>();
-gameService.UserSecondChoice();
+gameService.Start();
 
