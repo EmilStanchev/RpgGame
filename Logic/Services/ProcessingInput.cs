@@ -37,6 +37,8 @@ namespace Logic.Services
 
                     break;
                 case 3:
+                    _gameMenu.AllSwords(_storage.Shop.Swords);
+                    Console.WriteLine(_storage.Shop.Swords.Count() + "count");
                     break;
                 case 4:
                     ExitOption();

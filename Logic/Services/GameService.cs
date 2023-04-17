@@ -1,6 +1,7 @@
 ﻿using Interfaces.HeroInterfaces;
 using Interfaces.InputInterfaces;
 using Interfaces.MonsterInterfaces;
+using Interfaces.ShopInterfaces;
 
 namespace Logic.Services
 {
@@ -10,16 +11,20 @@ namespace Logic.Services
         private readonly IMonsterLogic _monsterLogic;
         private readonly IInputLogic _inputLogic;
         private readonly IProcessingInput _processingInput;
-        public GameService(IHeroLogic heroLogic, IMonsterLogic monsterLogic, IInputLogic inputLogic, IProcessingInput processingInput)
+        private readonly IShopLogic _shopLogic;
+        public GameService(IHeroLogic heroLogic, IMonsterLogic monsterLogic,
+            IInputLogic inputLogic, IProcessingInput processingInput, IShopLogic logic)
         {
             _heroLogic = heroLogic;
             _monsterLogic = monsterLogic;
             _inputLogic = inputLogic;
             _processingInput = processingInput;
+            _shopLogic = logic;
         }
         public IBaseHero UserFirstChoise()
         {
             CreateMonsters();
+            CreateSwords();
             var input = _inputLogic.FirstChoose();
             while (input != 1)
             {
@@ -34,7 +39,7 @@ namespace Logic.Services
         {
             Console.Clear();
             int option = _inputLogic.SecondChoose();
-            while (option != 1)
+            while (option != 4)
             {
                 _processingInput.SecondChoice(option);
                 option = _inputLogic.SecondChoose();
@@ -50,6 +55,10 @@ namespace Logic.Services
         private void CreateMonsters()
         {
             _monsterLogic.CreatingMonsters();
+        }
+        private void CreateSwords()
+        {
+            _shopLogic.CreateTheSwords();
         }
     }
 }

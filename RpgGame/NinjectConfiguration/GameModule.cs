@@ -23,18 +23,21 @@ namespace RpgGame.NinjectConfiguration
         public override void Load()
         {
             Bind<IPrint>().To<Print>().InSingletonScope();
-            Bind<IReader>().To<Reader>().InSingletonScope();
-            Bind<IGameStorage>().To<GameStorage>().InSingletonScope();
             Bind<IProcessingInput>().To<ProcessingInput>().InSingletonScope();
-            Bind<IShopModel>().To<Shop>().InSingletonScope();
+            Bind<IReader>().To<Reader>().InSingletonScope();
+            Bind<ISword>().To<Sword>();
             Bind<IBaseHero>().To<BaseHero>();
             Bind<IBaseMonster>().To<BaseMonster>();
+            Bind<ISwordFactory>().ToFactory();
             Bind<IHeroFactory>().ToFactory();
             Bind<IMonsterFactory>().ToFactory();
+            Bind<IShopModel>().To<Shop>().InSingletonScope();
+            Bind<IGameStorage>().To<GameStorage>().InSingletonScope(); ;
             Bind<IGameMenu>().To<GameMenu>().InSingletonScope();
             Bind<IInputLogic>().To<InputLogic>().InSingletonScope();
             Bind<IHeroLogic>().To<HeroLogic>().InSingletonScope();
             Bind<IMonsterLogic>().To<MonsterLogic>().InSingletonScope();
+            Bind<IShopLogic>().To<ShopLogic>();
 
         }
     }

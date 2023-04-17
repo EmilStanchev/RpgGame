@@ -1,5 +1,6 @@
 ﻿using Interfaces.MonsterInterfaces;
 using Interfaces.PrintningInterfaces;
+using Interfaces.ShopInterfaces;
 
 namespace Logic
 {
@@ -46,6 +47,13 @@ namespace Logic
             " You can attack monsters by choosing option. If you beat them u will recieve experience points and gold. With each level" +
             " your hero HP and Strenght will increase. If you beat all the monster u win. Have fun and don`t leave without get the" +
             " head of the last monster. Good luck and watch out.");
+        }
+        public void AllSwords(List<ISword> swords)
+        {
+            for (int i = 0; i < swords.Count(); i++)
+            {
+                _print.Message($"{i + 1}. {swords[i].Name}");
+            }
         }
         private void ChooseOptionMessage()
         {

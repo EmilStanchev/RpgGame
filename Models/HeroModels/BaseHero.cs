@@ -4,8 +4,8 @@ namespace Models.HeroModels
 {
     public class BaseHero : IBaseHero
     {
-        protected virtual int _startHP { get; set; }
-        protected virtual int _startStrength { get; set; }
+        protected virtual int _startHP { get; set; } = 25;
+        protected virtual int _startStrength { get; set; } = 5;
         public BaseHero(string name)
         {
             Name = name;
