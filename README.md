@@ -22,12 +22,14 @@ A simple console game where you have to escape from the catacombs. To do this, y
 <li>Leveling up system</li>
 </ol>
 </details>
+<br>
+The game is for educational purposes!
 </details>
 <br>
 
 # Technologies Used
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
-<img style="width:15%" src ="./Images/Ninject.png" alt="ninject photo" />
+<img style="width:15%" src ="Images/Ninject.png" alt="ninject photo" />
 
 # How I
 # Screenshots
