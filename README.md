@@ -1,7 +1,7 @@
 
 # RpgGame
 <details closed>
-<summary style="font-size:16px">How to Install and Run the Project?</summary>
+<summary style="font-size:16px">How to Install and Run the Project?  <span style="font-size:34px">⚙️</span></summary>
 <ol>
 <li>git clone https://github.com/EmilStanchev/RpgGame.git</li>
 <li>Open the project with Visual Studio </li>
@@ -12,7 +12,7 @@
 </details>
 <br>
 <details closed>
-<summary style="font-size:16px">Game Description</summary>
+<summary style="font-size:16px">Game Description <span style="font-size:34px">🎮</span></summary>
 A simple console game where you have to escape from the catacombs. To do this, you need to create a character with a unique name and face the fearsome monsters that stalk you from everywhere.
 <details closed>
 <summary>Features in the game:</summary>
@@ -27,11 +27,12 @@ The game is for educational purposes!
 </details>
 <br>
 
-# Technologies Used
+# Technologies Used 🔑
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
 <img style="width:18%" src ="Images/Ninject.png" alt="ninject photo" />
+<p></p>
 
-# Screenshots
+# Screenshots 📸
 <h3>Start menu: </h3>
 <img src="Images/StartMenu.png"/>
 
