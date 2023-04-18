@@ -4,8 +4,10 @@ namespace Models.HeroModels
 {
     public class BaseHero : IBaseHero
     {
-        protected virtual int _startHP { get; set; } = 25;
-        protected virtual int _startStrength { get; set; } = 5;
+        private int _startHP { get; set; } = 25;
+        private int _startStrength { get; set; } = 5;
+        private int _requiredExperience { get; set; } = 30;
+
         public BaseHero(string name)
         {
             Name = name;
@@ -14,6 +16,7 @@ namespace Models.HeroModels
             Level = 1;
             Experience = 0;
             Gold = 0;
+            ExperienceRequired = _requiredExperience;
         }
         public string Name { get; set; }
         public int HP { get; set; }

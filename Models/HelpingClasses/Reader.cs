@@ -27,7 +27,7 @@ namespace Models.HelpingClasses
             }
             return input;
         }
-        public bool Checker(string input)
+        private bool Checker(string input)
         {
             if (string.IsNullOrEmpty(input))
             {
