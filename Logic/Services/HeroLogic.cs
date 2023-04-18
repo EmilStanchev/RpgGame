@@ -50,11 +50,12 @@ namespace Logic.Services
             else
             {
                 _print.Message("Draw");
+                hero.HP = 1;
             }
         }
         public void CalculateNeededExp(IBaseHero hero)
         {
-            int baseExperience = 100;
+            int baseExperience = hero.ExperienceRequired;
             double growthRate = 1.2;
             int experienceRequired = (int)(baseExperience * Math.Pow(growthRate, hero.Level - 1));
             hero.ExperienceRequired = experienceRequired;
