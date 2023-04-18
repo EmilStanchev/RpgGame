@@ -7,7 +7,7 @@
 <li>Open the project with Visual Studio </li>
 <li>You almost ready. You just need to start the project: CTRL+F5</li>
 <li>Follow the instructions in the game!</li>
-<li>If you still can`t manage check the Screenshots</li>
+<li>If you're still having trouble take a look to Screenshots</li>
 </ol>
 </details>
 <br>
@@ -29,7 +29,16 @@ The game is for educational purposes!
 
 # Technologies Used
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
-<img style="width:15%" src ="Images/Ninject.png" alt="ninject photo" />
+<img style="width:18%" src ="Images/Ninject.png" alt="ninject photo" />
 
-# How I
 # Screenshots
+<h3>Start menu: </h3>
+<img src="Images/StartMenu.png"/>
+
+<h3>Pick a name for your hero: </h3>
+<img style="width:70%" src="Images/PickANameForHero.png"/>
+<h3>After create hero: </h3>
+<img style="width:70%" src="Images/CreatingHero.png"/>
+
+<h3>Fight with monster: </h3>
+<img style="width:70%" src="Images/Fight.png"/>

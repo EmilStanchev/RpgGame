@@ -30,10 +30,8 @@ namespace Logic.Services
         {
             while (hero.HP > 0 && monster.HP > 0)
             {
-                Console.WriteLine($"Hero hp:{hero.HP}");
                 monster.HP -= hero.Strength;
                 hero.HP -= monster.Strength;
-                Console.WriteLine($"Hero hp:{hero.HP}");
             }
             if (hero.HP > monster.HP)
             {
