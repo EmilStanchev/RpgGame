@@ -28,15 +28,17 @@ namespace Logic.Services
         }
         public void Fight(IBaseHero hero, IBaseMonster monster)
         {
-            while (hero.HP <= 0 || monster.HP <= 0)
+            while (hero.HP > 0 && monster.HP > 0)
             {
+                Console.WriteLine($"Hero hp:{hero.HP}");
                 monster.HP -= hero.Strength;
                 hero.HP -= monster.Strength;
+                Console.WriteLine($"Hero hp:{hero.HP}");
             }
             if (hero.HP > monster.HP)
             {
                 _print.Message($"{hero.Name} won vs {monster.Name} and get {monster.Gold} gold and {monster.GivenExperience} experience" +
-                    $"point!");
+                    $"point!He has {hero.HP} HP");
                 hero.Gold += monster.Gold;
                 hero.Experience += monster.GivenExperience;
             }
@@ -67,6 +69,17 @@ namespace Logic.Services
         }
         public void Buy(IBaseHero hero, ISword sword)
         {
+            if (hero.Gold >= sword.Price)
+            {
+                _print.Message($"You bought {sword.Name} for {sword.Price}");
+                hero.Gold -= sword.Price;
+                hero.Strength += sword.Strength;
+            }
+            else
+            {
+                int difference = sword.Price - hero.Gold;
+                _print.Message($"You dont have enough gold. You need {difference} more gold");
+            }
 
         }
     }

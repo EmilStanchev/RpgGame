@@ -31,6 +31,13 @@ namespace Logic
                 _print.Message($"{i + 1}. {monsters[i].Name}");
             }
         }
+        public void SwordList(List<ISword> swords)
+        {
+            for (int i = 0; i < swords.Count(); i++)
+            {
+                _print.Message($"{i + 1}. {swords[i].Name}");
+            }
+        }
         public void SecondMessage()
         {
             _print.Message("There is no way back. Start fight and get gold and experience points from monsters." +

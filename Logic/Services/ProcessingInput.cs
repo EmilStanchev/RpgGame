@@ -2,6 +2,7 @@
 using Interfaces.InputInterfaces;
 using Interfaces.MonsterInterfaces;
 using Interfaces.PrintningInterfaces;
+using Interfaces.ShopInterfaces;
 using Interfaces.StorageInterfaces;
 
 namespace Logic.Services
@@ -11,11 +12,13 @@ namespace Logic.Services
         private readonly IGameMenu _gameMenu;
         private readonly IGameStorage _storage;
         private readonly IHeroLogic _heroLogic;
-        public ProcessingInput(IGameMenu menu, IGameStorage storage, IHeroLogic logic)
+        private readonly IInputLogic _inputLogic;
+        public ProcessingInput(IGameMenu menu, IGameStorage storage, IHeroLogic logic, IInputLogic inputLogic)
         {
             _gameMenu = menu;
             _storage = storage;
             _heroLogic = logic;
+            _inputLogic = inputLogic;
         }
 
         public void FirstChoice(int option)
@@ -36,27 +39,37 @@ namespace Logic.Services
             {
                 case 1:
                     _gameMenu.MonsterList(_storage.Monsters);
+                    option = _inputLogic.GetMonster();
+                    var monster = MonsterChoice(option);
+                    _heroLogic.Fight(hero, monster);
+                    _heroLogic.LevelUp(hero);
                     break;
                 case 2:
                     _gameMenu.HeroInfo(hero);
                     break;
                 case 3:
                     _gameMenu.AllSwords(_storage.Shop.Swords);
-                    Console.WriteLine(_storage.Shop.Swords.Count() + "count");
+                    option = _inputLogic.SwordForBuying();
+                    var sword = SwordChoice(option);
+                    _heroLogic.Buy(hero, sword);
                     break;
                 case 4:
                     ExitOption();
                     break;
             }
         }
-        public void ThirdChoice(int option)
+        public ISword SwordChoice(int option)
         {
             switch (option)
             {
                 case 1:
-                    MonsterChoice(option);
-                    break;
+                    return _storage.Shop.Swords.SingleOrDefault(s => s.Name == "Stone Sword");
+                case 2:
+                    return _storage.Shop.Swords.SingleOrDefault(s => s.Name == "Elf Sword");
+                case 3:
+                    return _storage.Shop.Swords.SingleOrDefault(s => s.Name == "Dwarf Sword");
             }
+            return null;
         }
         public IBaseMonster MonsterChoice(int option)
         {

@@ -36,5 +36,15 @@ namespace Logic.Services
             var input = _reader.ConsoleReadNumber(4);
             return input;
         }
+        public int SwordForBuying()
+        {
+            var input = _reader.ConsoleReadNumber(4);
+            return input;
+        }
+        public int GetMonster()
+        {
+            var input = _reader.ConsoleReadNumber(4);
+            return input;
+        }
     }
 }

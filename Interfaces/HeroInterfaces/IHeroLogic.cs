@@ -1,4 +1,5 @@
 ﻿using Interfaces.MonsterInterfaces;
+using Interfaces.ShopInterfaces;
 
 namespace Interfaces.HeroInterfaces
 {
@@ -9,5 +10,6 @@ namespace Interfaces.HeroInterfaces
         public void Fight(IBaseHero hero, IBaseMonster monster);
         public void CalculateNeededExp(IBaseHero hero);
         public void LevelUp(IBaseHero hero);
+        public void Buy(IBaseHero hero, ISword sword);
     }
 }

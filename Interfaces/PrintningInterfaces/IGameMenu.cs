@@ -13,6 +13,6 @@ namespace Interfaces.PrintningInterfaces
         public void SecondMessage();
         public void Tutorial();
         public void HeroInfo(IBaseHero hero);
-
+        public void SwordList(List<ISword> swords);
     }
 }

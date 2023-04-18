@@ -15,10 +15,9 @@ namespace Logic.Services
 
         public void CreateTheSwords()
         {
-            var test = _swordFactory.CreateSword("test", 12, 2);
-            var stoneSword = _swordFactory.CreateSword("Stone Sword", 22, 4);
-            var elfSword = _swordFactory.CreateSword("Elf Sword", 52, 9);
-            var dwarfSword = _swordFactory.CreateSword("Dwarf Sword", 202, 19);
+            var stoneSword = _swordFactory.CreateSword("Stone Sword", 4, 54);
+            var elfSword = _swordFactory.CreateSword("Elf Sword", 12, 229);
+            var dwarfSword = _swordFactory.CreateSword("Dwarf Sword", 34, 500);
             List<ISword> swords = new List<ISword>() { stoneSword, elfSword, dwarfSword };
             _shop.Swords.AddRange(swords);
         }
