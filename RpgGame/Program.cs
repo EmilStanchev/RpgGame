@@ -1,8 +1,8 @@
-﻿using Logic.Services;
+﻿using Logic.Controllers;
 using Ninject;
 using RpgGame.NinjectConfiguration;
 
 var kernel = new StandardKernel(new GameModule());
-var gameService = kernel.Get<GameService>();
-gameService.Start();
+var gameController = kernel.Get<GameController>();
+gameController.Start();
 
