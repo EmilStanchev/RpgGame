@@ -15,12 +15,25 @@ namespace Models.HelpingClasses
         }
         public int ConsoleReadNumber(int max)
         {
-            var input = int.Parse(Console.ReadLine());
+            var rawInput = Console.ReadLine();
+            while (!Checker(rawInput))
+            {
+                rawInput = Console.ReadLine();
+            }
+            var input = int.Parse(rawInput);
             while (input > max)
             {
                 input = int.Parse(Console.ReadLine());
             }
             return input;
+        }
+        public bool Checker(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
