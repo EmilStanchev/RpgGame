@@ -1,11 +1,12 @@
-﻿using Interfaces.HeroInterfaces;
+﻿using Interfaces.GameInterfaces;
+using Interfaces.HeroInterfaces;
 using Interfaces.InputInterfaces;
 using Interfaces.MonsterInterfaces;
 using Interfaces.ShopInterfaces;
 
 namespace Logic.Services
 {
-    public class GameService
+    public class GameService : IGameService
     {
         private readonly IHeroLogic _heroLogic;
         private readonly IMonsterLogic _monsterLogic;

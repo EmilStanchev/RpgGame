@@ -1,4 +1,5 @@
 ﻿using Interfaces.Factories;
+using Interfaces.GameInterfaces;
 using Interfaces.HeroInterfaces;
 using Interfaces.InputInterfaces;
 using Interfaces.MonsterInterfaces;
@@ -38,7 +39,7 @@ namespace RpgGame.NinjectConfiguration
             Bind<IHeroLogic>().To<HeroLogic>().InSingletonScope();
             Bind<IMonsterLogic>().To<MonsterLogic>().InSingletonScope();
             Bind<IShopLogic>().To<ShopLogic>();
-
+            Bind<IGameService>().To<GameService>();
         }
     }
 }
