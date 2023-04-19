@@ -13,7 +13,7 @@
 <br>
 <details closed>
 <summary style="font-size:16px">Game Description <span style="font-size:34px">🎮</span></summary>
-A simple console game where you have to escape from the catacombs. To do this, you need to create a character with a unique name and face the fearsome monsters that stalk you from everywhere.
+This is a console-based RPG game made with C# for educational purposes! In this game, you play as a hero who must defeat all the monsters in the game to win. As you progress through the game, the monsters will become stronger, and you will need to upgrade your equipment to keep up with the challenge.
 <details closed>
 <summary>Features in the game:</summary>
 <ol>
